@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>LabSalt - Laboratory Chemicals & Salts</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header>
+        <h1>LabSalt</h1>
+        <p>Laboratory Chemicals & Salts</p>
+    </header>
+
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <a href="#">Home</a>
+
+        <a href="#products">
+            Products
+        </a>
+
+        <a href="#categories">
+            Categories
+        </a>
+
+        <a href="#orders">
+            My Orders
+        </a>
+
+        <a href="#about">
+            About
+        </a>
+
+        <a href="#contact">
+            Contact
+        </a>
+
+
+        <button
+            id="login-button"
+            onclick="openLogin()">
+
+            Login
+
+        </button>
+
+    </nav>
+
+
+    <!-- ================= SHOPPING CART ================= -->
+
+    <div id="cart">
+
+        <h2>
+            Shopping Cart
+            (<span id="cart-count">0</span>)
+        </h2>
+
+
+        <div id="cart-items">
+
+            <p>
+                Cart is empty
+            </p>
+
+        </div>
+
+
+        <p id="cart-total">
+            Total: ₹0
+        </p>
+
+
+        <div class="cart-buttons">
+
+            <button onclick="clearCart()">
+
+                Clear Cart
+
+            </button>
+
+
+            <button
+                class="checkout"
+                onclick="checkout()">
+
+                Checkout
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero">
+
+        <h2>
+            Laboratory Chemicals Made Simple
+        </h2>
+
+
+        <p>
+            Explore laboratory salts and chemicals in one place.
+        </p>
+
+
+        <button onclick="scrollToProducts()">
+
+            Explore Products
+
+        </button>
+
+    </section>
+
+
+    <!-- ================= PRODUCTS ================= -->
+
+    <section id="products">
+
+        <!-- SEARCH -->
+
+        <div class="search-section">
+
+            <h2>
+                Find Your Chemical
+            </h2>
+
+
+            <input
+                type="text"
+                id="search"
+                placeholder="Search for a chemical..."
+                onkeyup="searchProducts()">
+
+        </div>
+
+
+        <h2>
+            Our Products
+        </h2>
+
+
+        <div class="product-container">
+
+
+            <!-- ================= PRODUCT 1 ================= -->
+
+            <div
+                class="product"
+                data-category="salt">
+
+
+                <img
+                    src="images/sodium-chloride.png"
+                    alt="Sodium Chloride">
+
+
+                <h3
+                    class="product-name"
+                    onclick="showProductDetails('Sodium Chloride')">
+
+                    Sodium Chloride
+
+                </h3>
+
+
+                <p>
+                    Formula: NaCl
+                </p>
+
+
+                <p>
+                    Laboratory Grade
+                </p>
+
+
+                <p>
+                    Pack Size: 100 g
+                </p>
+
+
+                <p class="price">
+                    ₹150
+                </p>
+
+
+                <button
+                    onclick="addToCart('Sodium Chloride')">
+
+                    Add to Cart
+
+                </button>
+
+
+                <button
+                    class="buy-now"
+                    onclick="buyNow('Sodium Chloride')">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= PRODUCT 2 ================= -->
+
+            <div
+                class="product"
+                data-category="salt">
+
+
+                <img
+                    src="images/copper-sulfate.png"
+                    alt="Copper Sulfate">
+
+
+                <h3
+                    class="product-name"
+                    onclick="showProductDetails('Copper Sulfate')">
+
+                    Copper Sulfate
+
+                </h3>
+
+
+                <p>
+                    Formula: CuSO₄
+                </p>
+
+
+                <p>
+                    Laboratory Grade
+                </p>
+
+
+                <p>
+                    Pack Size: 100 g
+                </p>
+
+
+                <p class="price">
+                    ₹450
+                </p>
+
+
+                <button
+                    onclick="addToCart('Copper Sulfate')">
+
+                    Add to Cart
+
+                </button>
+
+
+                <button
+                    class="buy-now"
+                    onclick="buyNow('Copper Sulfate')">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+
+            <!-- ================= PRODUCT 3 ================= -->
+
+            <div
+                class="product"
+                data-category="salt">
+
+
+                <img
+                    src="images/potassium-chloride.png"
+                    alt="Potassium Chloride">
+
+
+                <h3
+                    class="product-name"
+                    onclick="showProductDetails('Potassium Chloride')">
+
+                    Potassium Chloride
+
+                </h3>
+
+
+                <p>
+                    Formula: KCl
+                </p>
+
+
+                <p>
+                    Laboratory Grade
+                </p>
+
+
+                <p>
+                    Pack Size: 100 g
+                </p>
+
+
+                <p class="price">
+                    ₹200
+                </p>
+
+
+                <button
+                    onclick="addToCart('Potassium Chloride')">
+
+                    Add to Cart
+
+                </button>
+
+
+                <button
+                    class="buy-now"
+                    onclick="buyNow('Potassium Chloride')">
+
+                    Buy Now
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= CATEGORIES ================= -->
+
+    <section id="categories">
+
+        <h2>
+            Categories
+        </h2>
+
+
+        <button
+            onclick="filterCategory('salt')">
+
+            Inorganic Salts
+
+        </button>
+
+
+        <button
+            onclick="showCategoryMessage('Acids')">
+
+            Acids
+
+        </button>
+
+
+        <button
+            onclick="showCategoryMessage('Bases')">
+
+            Bases
+
+        </button>
+
+
+        <button
+            onclick="showCategoryMessage('Indicators')">
+
+            Indicators
+
+        </button>
+
+
+        <button
+            onclick="showAllProducts()">
+
+            Show All
+
+        </button>
+
+    </section>
+
+
+    <!-- ================================================= -->
+    <!-- MY ORDERS SECTION -->
+    <!-- ================================================= -->
+
+    <section id="orders">
+
+        <h2>
+            📦 My Orders
+        </h2>
+
+
+        <p>
+            View your previous LabSalt orders here.
+        </p>
+
+
+        <div id="orders-list">
+
+            <p>
+                No orders yet.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <h2>
+            About LabSalt
+        </h2>
+
+
+        <p>
+
+            LabSalt is a student e-commerce project
+            designed to organize laboratory chemicals
+            and salts in a simple, user-friendly way.
+
+        </p>
+
+    </section>
+
+
+    <!-- ================= CONTACT ================= -->
+
+    <section id="contact">
+
+        <h2>
+            Contact Us
+        </h2>
+
+
+        <p>
+            Email: labsalt@example.com
+        </p>
+
+
+        <p>
+            Phone: +91 XXXXX XXXXX
+        </p>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 LabSalt. Student Project.
+        </p>
+
+    </footer>
+
+
+    <!-- ================================================= -->
+    <!-- PRODUCT DETAILS POPUP -->
+    <!-- ================================================= -->
+
+    <div id="product-modal">
+
+        <div class="modal-content">
+
+
+            <button
+                class="close-modal"
+                onclick="closeProductDetails()">
+
+                ×
+
+            </button>
+
+
+            <h2 id="modal-product-name">
+                Product Name
+            </h2>
+
+
+            <p id="modal-formula"></p>
+
+            <p id="modal-grade"></p>
+
+            <p id="modal-purity"></p>
+
+            <p id="modal-pack"></p>
+
+            <p id="modal-price"></p>
+
+            <p id="modal-description"></p>
+
+
+            <button id="modal-cart-button">
+
+                Add to Cart
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- LOGIN / REGISTER POPUP -->
+    <!-- ================================================= -->
+
+    <div id="login-modal">
+
+        <div class="login-box">
+
+
+            <button
+                class="close-login"
+                onclick="closeLogin()">
+
+                ×
+
+            </button>
+
+
+            <!-- LOGIN -->
+
+            <div id="login-form">
+
+                <h2>
+                    Welcome Back
+                </h2>
+
+
+                <p>
+                    Login to your LabSalt account
+                </p>
+
+
+                <input
+                    type="email"
+                    id="login-email"
+                    placeholder="Email address">
+
+
+                <input
+                    type="password"
+                    id="login-password"
+                    placeholder="Password">
+
+
+                <button onclick="loginUser()">
+
+                    Login
+
+                </button>
+
+
+                <p class="switch-form">
+
+                    Don't have an account?
+
+                    <span onclick="showRegister()">
+
+                        Register
+
+                    </span>
+
+                </p>
+
+            </div>
+
+
+            <!-- REGISTER -->
+
+            <div id="register-form">
+
+                <h2>
+                    Create Account
+                </h2>
+
+
+                <p>
+                    Join LabSalt today
+                </p>
+
+
+                <input
+                    type="text"
+                    id="register-name"
+                    placeholder="Full name">
+
+
+                <input
+                    type="email"
+                    id="register-email"
+                    placeholder="Email address">
+
+
+                <input
+                    type="password"
+                    id="register-password"
+                    placeholder="Create password">
+
+
+                <input
+                    type="password"
+                    id="register-confirm-password"
+                    placeholder="Confirm password">
+
+
+                <button onclick="registerUser()">
+
+                    Register
+
+                </button>
+
+
+                <p class="switch-form">
+
+                    Already have an account?
+
+                    <span onclick="showLogin()">
+
+                        Login
+
+                    </span>
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- CHECKOUT POPUP -->
+    <!-- ================================================= -->
+
+    <div id="checkout-modal">
+
+        <div class="checkout-box">
+
+
+            <button
+                class="close-checkout"
+                onclick="closeCheckout()">
+
+                ×
+
+            </button>
+
+
+            <h2>
+                Complete Your Order
+            </h2>
+
+
+            <p>
+                Enter your details to place your order.
+            </p>
+
+
+            <input
+                type="text"
+                id="customer-name"
+                placeholder="Full name">
+
+
+            <input
+                type="email"
+                id="customer-email"
+                placeholder="Email address">
+
+
+            <input
+                type="tel"
+                id="customer-phone"
+                placeholder="Phone number">
+
+
+            <textarea
+                id="customer-address"
+                placeholder="Delivery address"></textarea>
+
+
+            <h3>
+                Order Summary
+            </h3>
+
+
+            <div id="checkout-items">
+
+                <!-- Cart products appear here -->
+
+            </div>
+
+
+            <p id="checkout-total">
+                Total: ₹0
+            </p>
+
+
+            <button
+                class="place-order"
+                onclick="placeOrder()">
+
+                Place Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================================================= -->
+    <!-- ORDER SUCCESS POPUP -->
+    <!-- ================================================= -->
+
+    <div id="order-success-modal">
+
+        <div class="success-box">
+
+
+            <h2>
+                🎉 Order Placed!
+            </h2>
+
+
+            <p>
+                Thank you for shopping with LabSalt.
+            </p>
+
+
+            <p id="order-id">
+                Order ID:
+            </p>
+
+
+            <button
+                onclick="closeOrderSuccess()">
+
+                Continue Shopping
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
